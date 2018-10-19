@@ -1,4 +1,4 @@
-# The TARBS Post-Install Wizard
+# The LARBS Post-Install Wizard
 
 **NOTE TO PEOPLE WHO AREN'T LUKE:** This isn't ready for use yet. It's just up
 on Github now for my convenience as I'm testing things. I'll say when it's
