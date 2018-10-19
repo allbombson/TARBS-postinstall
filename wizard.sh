@@ -10,14 +10,14 @@ tmpdir=$(mktemp -d)
 
 # Construct menu file.  For some reasons, it's easier to constuct it on the fly
 # than use eval and such.
-echo "dialog --title \"LARBS Post-Install Wizard\" --menu \"What would you like to do?\" 15 45 8 \\" > $tmpdir/menu.sh
+echo "dialog --title \"TARBS Post-Install Wizard\" --menu \"What would you like to do?\" 15 45 8 \\" > $tmpdir/menu.sh
 echo $(cut -d, -f1,2 "$menufile" | sed -e "s/,/ \"/g;s/$/\"/g")" \\" >> $tmpdir/menu.sh
 echo "2>$tmpdir/choice" >> $tmpdir/menu.sh
 
 # Get user input of what packages to install.
 bash $tmpdir/menu.sh
 chosen=$(cat $tmpdir/choice)
-[[ $chosen == "" ]] && clear && exit
+#[[ $chosen == "" ]] && clear && exit
 
 # In addition to installing the tagged programs, you can have scripts that run
 # either before or after the installation.  To do this, you need only create a
