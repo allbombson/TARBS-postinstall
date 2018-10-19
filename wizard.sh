@@ -2,9 +2,9 @@
 
 # Add explanation.
 
-menufile="$HOME/.larbs-wizard/choices.csv"
-progsfile="$HOME/.larbs-wizard/installable.csv"
-specdir="$HOME/.larbs-wizard/wrappers"
+menufile="$HOME/TARBS-postinstall/choices.csv"
+progsfile="$HOME/TARBS-postinstall/installable.csv"
+specdir="$HOME/TARBS-postinstall/wrappers"
 
 tmpdir=$(mktemp -d)
 
