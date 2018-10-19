@@ -27,10 +27,11 @@ sudo echo "#!/bin/bash" > test/menu.sh
 sudo echo "dialog --title \"TARBS Post-Install Wizard\" --menu \"What would you like to do?\" 15 45 8 \\" >> test/menu.sh
 sudo echo $(cut -d, -f1,2 "$menufile" | sed -e "s/,/ \"/g;s/$/\"/g")" \\" >> test/menu.sh
 sudo echo "2>test/choice" >> test/menu.sh
+sudo echo "chosen=$(cat test/choice)" >> test/menu.sh
 sudo echo "grep '^\$chosen' installable.csv | cut -d ',' -f2" >> test/menu.sh
 #grep '^D' installable.csv | cut -d ',' -f2
 
-pause 'Any key'
+pause 'enter'
 #[[ ! $? -eq 0 ]] && echo error 2 && exit
 
 
@@ -38,7 +39,7 @@ pause 'Any key'
 
 #[[ ! $? -eq 0 ]] && echo error 3-1 && exit
 sudo bash test/menu.sh
-
+pause 'enter'
 #[[ ! $? -eq 0 ]] && echo error 3-2 && exit
 chosen=$(cat test/choice)
 
