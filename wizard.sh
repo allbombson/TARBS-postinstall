@@ -36,4 +36,4 @@ yay -S $(grep ^$chosen $progsfile | cut -d ',' -f2)
 
 # Post installation script.
 [[ -f  $specdir/$chosen.post ]] && bash $specdir/$chosen.post
-
+bash wizard.sh
