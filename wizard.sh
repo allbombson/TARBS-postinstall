@@ -1,14 +1,10 @@
 #!/bin/bash
 
 # Add explanation.
-git clone https://github.com/allbombson/TARBS-postinstall
-mv TARBS-postinstall/choices.csv choices.csv
-mv TARBS-postinstall/installable.csv installable.csv
-mv TARBS-postinstall/wrappers/ wrappers/
 
-menufile="choices.csv"
-progsfile="installable.csv"
-specdir="wrappers"
+menufile="$HOME/TARBS-postinstall/choices.csv"
+progsfile="$HOME/TARBS-postinstall/installable.csv"
+specdir="$HOME/TARBS-postinstall/wrappers"
 
 tmpdir=$(mktemp -d)
 
