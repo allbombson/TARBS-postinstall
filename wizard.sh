@@ -42,3 +42,4 @@ echo $(grep ^$chosen $progsfile | cut -d ',' -f2)
 [[ -f  $specdir/$chosen.post ]] && bash $specdir/$chosen.post
 rm -rf choices.csv wrappers/ TARBS-postinstall installable.csv
 clear
+echo $(grep ^$chosen $progsfile | cut -d ',' -f2)
