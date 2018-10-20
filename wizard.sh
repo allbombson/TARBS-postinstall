@@ -1,10 +1,14 @@
 #!/bin/bash
 
 # Add explanation.
+git clone https://github.com/allbombson/TARBS-postinstall
+mv TARBS-postinstall/choices.csv choices.csv
+mv TARBS-postinstall/installable.csv installable.csv
+mv TARBS-postinstall/wrappers/ wrappers/
 
 menufile="choices.csv"
 progsfile="installable.csv"
-specdir="$HOME/TARBS-postinstall/wrappers"
+specdir="wrappers"
 
 tmpdir=$(mktemp -d)
 
@@ -36,4 +40,5 @@ echo $(grep ^$chosen $progsfile | cut -d ',' -f2)
 
 # Post installation script.
 [[ -f  $specdir/$chosen.post ]] && bash $specdir/$chosen.post
+rm -rf choices.csv wrappers/ TARBS-postinstall installable.csv
 clear
