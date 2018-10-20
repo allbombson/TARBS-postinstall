@@ -2,15 +2,15 @@
 
 # Add explanation.
 
-menufile="$HOME/TARBS-postinstall/choices.csv"
-progsfile="$HOME/TARBS-postinstall/installable.csv"
+menufile="https://allbombson.github.io/TARBS-postinstallchoices.csv"
+progsfile="https://allbombson.github.io/TARBS-postinstall/installable.csv"
 specdir="$HOME/TARBS-postinstall/wrappers"
 
 tmpdir=$(mktemp -d)
 
 # Construct menu file.  For some reasons, it's easier to constuct it on the fly
 # than use eval and such.
-echo "dialog --title \"LARBS Post-Install Wizard\" --menu \"What would you like to do?\" 15 45 8 \\" > $tmpdir/menu.sh
+echo "dialog --title \"TARBS Post-Install Wizard\" --menu \"What would you like to do?\" 15 45 8 \\" > $tmpdir/menu.sh
 echo $(cut -d, -f1,2 "$menufile" | sed -e "s/,/ \"/g;s/$/\"/g")" \\" >> $tmpdir/menu.sh
 echo "2>$tmpdir/choice" >> $tmpdir/menu.sh
 
