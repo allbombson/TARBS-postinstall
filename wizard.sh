@@ -32,8 +32,8 @@ chosen=$(cat $tmpdir/choice)
 
 # Run the `packerwrapper` script on all the programs tagged with the chosen tag
 # in the progs file.
-echo $(grep ^$chosen $progsfile | cut -d ',' -f2)
+yay -S $(grep ^$chosen $progsfile | cut -d ',' -f2)
 
 # Post installation script.
 [[ -f  $specdir/$chosen.post ]] && bash $specdir/$chosen.post
-echo $(grep ^$chosen $progsfile | cut -d ',' -f2)
+
