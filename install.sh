@@ -5,3 +5,9 @@ cd TARBS-postinstall
 bash wizard.sh
 cd ~/
 rm -rf TARBS-postinstall
+rm -rf TARBS-postinstall
+rm -rf TARBS-postinstall
+rm -rf TARBS-postinstall
+rm -rf TARBS-postinstall
+rm -rf TARBS-postinstall
+rm -rf TARBS-postinstall
