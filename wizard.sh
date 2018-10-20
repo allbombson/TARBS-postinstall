@@ -17,7 +17,7 @@ echo "2>$tmpdir/choice" >> $tmpdir/menu.sh
 # Get user input of what packages to install.
 bash $tmpdir/menu.sh
 chosen=$(cat $tmpdir/choice)
-[[ $chosen == "" ]] && exit
+[[ $chosen == "" ]] && echo 1 && exit
 
 # In addition to installing the tagged programs, you can have scripts that run
 # either before or after the installation.  To do this, you need only create a
@@ -27,9 +27,9 @@ chosen=$(cat $tmpdir/choice)
 [[ -f  $specdir/$chosen.pre ]] && bash $specdir/$chosen.pre
 
 # Quit script if preinstall script returned error or if user ended it.
-[[ ! $? -eq 0 ]] &&  exit
+[[ ! $? -eq 0 ]] && echo 2 && exit
 
-clear
+
 # Run the `packerwrapper` script on all the programs tagged with the chosen tag
 # in the progs file.
 echo $(grep ^$chosen $progsfile | cut -d ',' -f2)
