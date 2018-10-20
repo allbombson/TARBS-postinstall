@@ -27,7 +27,7 @@ chosen=$(cat $tmpdir/choice)
 [[ -f  $specdir/$chosen.pre ]] && bash $specdir/$chosen.pre
 
 # Quit script if preinstall script returned error or if user ended it.
-[[ ! $? -eq 0 ]] && echo 2 && exit
+#[[ ! $? -eq 0 ]] && echo 2 && exit
 
 
 # Run the `packerwrapper` script on all the programs tagged with the chosen tag
@@ -36,5 +36,4 @@ echo $(grep ^$chosen $progsfile | cut -d ',' -f2)
 
 # Post installation script.
 [[ -f  $specdir/$chosen.post ]] && bash $specdir/$chosen.post
-rm -rf choices.csv wrappers/ TARBS-postinstall installable.csv
 echo $(grep ^$chosen $progsfile | cut -d ',' -f2)
