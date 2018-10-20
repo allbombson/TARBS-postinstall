@@ -2,8 +2,8 @@
 
 # Add explanation.
 
-menufile="https://raw.githubusercontent.com/allbombson/TARBS-postinstall/master/choices.csv"
-progsfile="https://raw.githubusercontent.com/allbombson/TARBS-postinstall/master/installable.csv"
+menufile="choices.csv"
+progsfile="installable.csv"
 specdir="$HOME/TARBS-postinstall/wrappers"
 
 tmpdir=$(mktemp -d)
