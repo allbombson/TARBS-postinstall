@@ -38,5 +38,5 @@ U,rxvt-unicode,alternate terminal
 U,urxvt-perls,perl scripts for urxvt
 U,urxvt-resize-font-git,resize urxvt font
 
-Z,steam,Steam
-Z,steam-native-runtime,Steam2
+S,steam,Steam
+S,steam-native-runtime,Steam2
