@@ -41,3 +41,5 @@ U,urxvt-resize-font-git,resize urxvt font
 
 S,steam,Steam
 S,steam-native-runtime,Steam2
+
+N,network-manager-applet,appears in the top right corner and manages the wi-fi connection
