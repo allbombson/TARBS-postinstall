@@ -24,6 +24,8 @@ chosen=$(cat $tmpdir/choice)
 # file in ~/.larbs-wizard/.specific/Z.pre (or Z.post).  `Z` here is the tag of
 # the programs.
 
+
+dialog --title "TARBS Post Installation" --infobox "Getting program of your choice setup" 5 70
 [[ -f  $specdir/$chosen.pre ]] && bash $specdir/$chosen.pre &>/dev/null
 
 
@@ -31,8 +33,12 @@ chosen=$(cat $tmpdir/choice)
 
 # Run the `packerwrapper` script on all the programs tagged with the chosen tag
 # in the progs file.
+dialog --title "TARBS Post Installation" --infobox "Installing program of your choice" 5 70
 yay -S --noconfirm $(grep ^$chosen $progsfile | cut -d ',' -f2) &>/dev/null
 
 # Post installation script.
+dialog --title "TARBS Post Installation" --infobox "Installing program of your choice" 5 70
 [[ -f  $specdir/$chosen.post ]] && bash $specdir/$chosen.post &>/dev/null
+
+dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the program installed successfully and has been setup for you!\\n\\nTo install a program again select from the list what you want the same menus will show, to quit and enjoy your system just choose cancel.\\n\\n-Thomas" 12 80
 bash wizard.sh
