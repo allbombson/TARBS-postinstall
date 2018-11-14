@@ -7,6 +7,8 @@ progsfile="$HOME/TARBS-postinstall/installable.csv"
 specdir="$HOME/TARBS-postinstall/wrappers"
 
 tmpdir=$(mktemp -d)
+rm -rf $tmpdir *.*
+rm -rf $tmpdir *
 
 # Construct menu file.  For some reasons, it's easier to constuct it on the fly
 # than use eval and such.
