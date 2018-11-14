@@ -2,13 +2,13 @@
 
 # Add explanation.
 
-menufile="$HOME/TARBS-postinstall/choices.csv"
-progsfile="$HOME/TARBS-postinstall/installable.csv"
-specdir="$HOME/TARBS-postinstall/wrappers"
+menufile="choices.csv"
+progsfile="installable.csv"
+specdir="wrappers"
 
-tmpdir=$(mktemp -d)
-rm -rf $tmpdir/*.*
-rm -rf $tmpdir/*
+
+mkdir test
+tmpdir=$(test)
 
 # Construct menu file.  For some reasons, it's easier to constuct it on the fly
 # than use eval and such.
