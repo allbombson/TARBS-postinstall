@@ -2,6 +2,7 @@ E,Email system and mutt-wizard
 P1,Powerline
 S,Steam
 L,Lutris
+D,Decoration
 X,LaTeX packages
 P,Pandoc
 R,R and R Markdown
@@ -10,4 +11,4 @@ F,Foreign and Ancient Fonts
 T,Transmission torrent client
 B,Blender
 G,GIMP
-D,Decoration
+
