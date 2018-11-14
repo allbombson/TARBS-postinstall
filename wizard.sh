@@ -17,23 +17,22 @@ echo "2>$tmpdir/choice" >> $tmpdir/menu.sh
 # Get user input of what packages to install.
 bash $tmpdir/menu.sh
 chosen=$(cat $tmpdir/choice)
-[[ $chosen == "" ]] && echo 1 && exit
+[[ $chosen == "" ]] && exit
 
 # In addition to installing the tagged programs, you can have scripts that run
 # either before or after the installation.  To do this, you need only create a
 # file in ~/.larbs-wizard/.specific/Z.pre (or Z.post).  `Z` here is the tag of
 # the programs.
 
-[[ -f  $specdir/$chosen.pre ]] && bash $specdir/$chosen.pre
+[[ -f  $specdir/$chosen.pre ]] && bash $specdir/$chosen.pre &>/dev/null
 
-# Quit script if preinstall script returned error or if user ended it.
-#[[ ! $? -eq 0 ]] && echo 2 && exit
+
 
 
 # Run the `packerwrapper` script on all the programs tagged with the chosen tag
 # in the progs file.
-yay -S $(grep ^$chosen $progsfile | cut -d ',' -f2)
+yay -S --noconfirm $(grep ^$chosen $progsfile | cut -d ',' -f2) &>/dev/null
 
 # Post installation script.
-[[ -f  $specdir/$chosen.post ]] && bash $specdir/$chosen.post
+[[ -f  $specdir/$chosen.post ]] && bash $specdir/$chosen.post &>/dev/null
 bash wizard.sh
