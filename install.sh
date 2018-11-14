@@ -3,6 +3,7 @@ dialog --title "TARBS Post Installation" --infobox "Loading Menu" 5 70
 cd ~/
 git clone https://github.com/allbombson/TARBS-postinstall &>/dev/null
 cd TARBS-postinstall
+tput clear
 sudo bash wizard.sh
 cd ~/
 
