@@ -17,7 +17,7 @@ echo "2>$tmpdir/choice" >> $tmpdir/menu.sh
 # Get user input of what packages to install.
 bash $tmpdir/menu.sh
 chosen=$(cat $tmpdir/choice)
-[[ $chosen == "" ]] && tput clear && exit
+[[ $chosen == "" ]] && tput clear && echo "Run \"pi\" or \"post-install\" to open this again!" && exit
 
 # In addition to installing the tagged programs, you can have scripts that run
 # either before or after the installation.  To do this, you need only create a
