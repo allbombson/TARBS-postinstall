@@ -1,1 +1,1 @@
-pip install powerline-status
+/usr/bin/yes | sudo pip install powerline-status
