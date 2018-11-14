@@ -40,5 +40,5 @@ yay -S --noconfirm $(grep ^$chosen $progsfile | cut -d ',' -f2) &>/dev/null
 dialog --title "TARBS Post Installation" --infobox "Installing program of your choice" 5 70
 [[ -f  $specdir/$chosen.post ]] && bash $specdir/$chosen.post &>/dev/null
 
-dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the program installed successfully and has been setup for you!\\n\\nTo install a program again select from the list what you want the same menus will show, to quit and enjoy your system just choose cancel.\\n\\n-Thomas" 12 80
+dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the program you chose has been installed successfully and has been setup for you!\\n\\nTo install a program again, select it from the list. You will see the same installing menus and then this, to quit and enjoy your system just choose cancel on the next page.\\n\\n-Thomas" 12 80
 bash wizard.sh
