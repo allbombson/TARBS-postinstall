@@ -45,3 +45,5 @@ S,steam-native-runtime,Steam2
 N,network-manager-applet,appears in the top right corner and manages the wi-fi connection
 
 A,all-repository-fonts,Fonts
+
+W,wine-staging,Wine
